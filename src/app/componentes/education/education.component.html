@@ -1,0 +1,75 @@
+<div class="card">
+    <div class="card-body">
+
+      <h2>Educación</h2>
+
+      <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+        <button (click)='off_on_form_educ()' class="btn btn-light me-md-2" type="button"><i class="bi bi-pen"></i></button>     
+      </div>
+
+      <div *ngIf="educ_form">
+        <br>
+        <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+            <button (click)="agregar_Educ()" class="btn btn-light" type="button"><i class="bi bi-plus-lg"></i><p>Añadir</p></button>
+        </div>
+        <br>
+
+        <form [formGroup]="formulario_educ">
+           <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping">Institucion</span>
+              <input type="text" formControlName="institucion" class="form-control" placeholder="Nombre del establecimiento" aria-label="Institucion" aria-describedby="addon-wrapping">
+           </div>
+           <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping">Carrera</span>
+              <input type="text" formControlName="carrera" class="form-control" placeholder="Nombre del Titulo" aria-label="Carrera" aria-describedby="addon-wrapping">
+           </div>
+           <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Año de Inicio</span>
+            <input type="number" formControlName="inicio" class="form-control" placeholder="Año de Inicio YYYY" aria-label="YYYY" aria-describedby="addon-wrapping">
+           </div>
+           <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Año de Finalización</span>
+            <input type="number" formControlName="fin" class="form-control" placeholder="Año de finalización YYYY" aria-label="YYYY" aria-describedby="addon-wrapping">
+           </div>
+           <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">URL-Imagen-Logo </span>
+            <input type="text" formControlName="url_logoInst" class="form-control" placeholder="Copia aquí la Url de la imagen del logo del establecimiento" aria-label="Logo" aria-describedby="addon-wrapping">
+           </div>
+        </form>
+    </div>
+    <br>
+    <br>
+      <div>
+        <ul>
+            <li *ngFor="let studies of educ_list" class="list-group-item">
+                
+                <div class="card mb-3" >
+                    <div class="row g-0">
+                      <div class="col-md-3">
+                        <img [src]="studies.url_logoInst" class="img-fluid rounded-start" id="educ-logo" alt="...">
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body">
+
+                            <div *ngIf="educ_form" class="d-grid gap-1 d-md-flex justify-content-md-end">
+                              <button class="btn btn-light me-md-2" type="button"><i class="bi bi-pen"></i></button>
+                              <button (click)="delete_Educ(studies.id_educacion)" class="btn btn-light" type="button"><i class="bi bi-trash"></i></button>
+                            </div>
+
+                            <div id="educ-info">
+                                <h3 class="card-title">{{studies.institucion}}</h3>
+                                <p class="card-text">{{studies.carrera}}</p>
+                                <p class="card-text"><small class="text-muted">{{studies.inicio}} - {{studies.fin}}</small></p>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+</div>

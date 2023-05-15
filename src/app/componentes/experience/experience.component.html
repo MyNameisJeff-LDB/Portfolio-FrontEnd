@@ -1,0 +1,78 @@
+<div class="card">
+    
+    <div class="card-body">
+
+      <h2>Experiencia</h2>
+      <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+        <button (click)="off_on_form_exp()" class="btn btn-light" type="button"><i class="bi bi-pen"></i></button>
+      </div>
+
+
+      <div *ngIf="flag_form_exp">
+        <br>
+        <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+            <button (click)="agregar_Exp()" class="btn btn-light" type="button"><i class="bi bi-plus-lg"></i><p>Añadir</p></button>
+        </div>
+        <br>
+
+        <form [formGroup]="formulario_exp">
+           <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping">Posición de Trabajo</span>
+              <input type="text" formControlName="position" class="form-control" placeholder="Rol que desempeñó" aria-label="Rol" aria-describedby="addon-wrapping">
+           </div>
+           <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping">Empresa u Organismo</span>
+              <input type="text" formControlName="company" class="form-control" placeholder="Empresa, Organismo o Freelance" aria-label="Trabajo" aria-describedby="addon-wrapping">
+           </div>
+           <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">URL-Imagen-Logo</span>
+            <input type="text" formControlName="url_logo_company" class="form-control" placeholder="Url de logo" aria-label="Imagen" aria-describedby="addon-wrapping">
+           </div>
+           <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Ubicacion de Trabajo</span>
+            <input type="text" formControlName="cityJob" class="form-control" placeholder="Ubicacion de lugar de Trabajo" aria-label="City" aria-describedby="addon-wrapping">
+           </div>
+           <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Ciclo y duración</span>
+            <input type="text" formControlName="cicle" class="form-control" placeholder="(ejem) 2005-2006 - 1 Año" aria-label="Tiempo trabajado" aria-describedby="addon-wrapping">
+           </div>
+        </form>
+        <br>
+      </div>
+
+
+      <div>
+         <ul>
+              <li *ngFor="let exp of xperience_list" class="list-group-item">
+              
+                  <div class="data-container">
+                     
+                      <div class="logo-image-container">
+                          <img
+                              class="logo-item"
+                              [src]="exp.url_logo_company" 
+                          />
+                      </div>
+
+                      <div *ngIf="flag_form_exp" class="d-grid gap-1 d-md-flex justify-content-md-end">
+                        <button class="btn btn-light me-md-2" type="button"><i class="bi bi-pen"></i></button>
+                        <button (click)="delete_Exp(exp.idexperiencia_laboral)" class="btn btn-light" type="button"><i class="bi bi-trash"></i></button>
+                      </div>
+
+                      <div class="position-info">
+                          <h3>{{exp.position}}</h3>
+                          <p>{{exp.company}}</p>
+                          <p>{{exp.cicle}}</p>
+                          <p>{{exp.cityJob}}</p>
+                      </div>
+
+                  </div>
+              </li>
+
+          </ul>
+
+        </div>
+        
+
+    </div>
+</div>

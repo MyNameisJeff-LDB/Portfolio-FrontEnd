@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-body">
+        <h2>Acerca de mi <button (click)='off_on_form_about()' class="btn btn-light" type="button"><i class="bi bi-pen"></i></button>
+        </h2>
+
+
+
+        <div *ngIf="flag_form_about">
+            <br>
+            <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+                <button (click)="modifica_About()" class="btn btn-light" type="button"><i class="bi bi-plus-lg"></i><p>Modifica</p></button>
+            </div>
+            <br>
+    
+            <form [formGroup]="formulario_about">
+
+               <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">Apellido y Nombre:</span>
+                  <input type="text" [(ngModel)]="data_portfolio.nombre_y_apellido" formControlName="nombre_y_apellido" class="form-control" placeholder="Apellido y Nombres" aria-label="DataName" aria-describedby="addon-wrapping">
+               </div>
+               <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">Fecha de Nacimiento:</span>
+                  <input type="date" [(ngModel)]="data_portfolio.nac" formControlName="nac" class="form-control" placeholder="YYYY-MM-DD" aria-label="DateNac" aria-describedby="addon-wrapping">
+               </div>
+               <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Domicilio:</span>
+                <input type="text" [(ngModel)]="data_portfolio.domicilio" formControlName="domicilio" class="form-control" placeholder="Locacion" aria-label="Place" aria-describedby="addon-wrapping">
+               </div>
+               <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Email:</span>
+                <input type="text" [(ngModel)]="data_portfolio.correo" formControlName="correo" class="form-control" placeholder="Correo Electrónico" aria-label="Mail" aria-describedby="addon-wrapping">
+               </div>
+               <div class="input-group">
+                <span class="input-group-text">Sobre mí:</span>
+                <textarea [(ngModel)]="data_portfolio.sobre_mi" formControlName="sobre_mi" class="form-control" aria-label="AboutMe"></textarea>
+               </div>
+               <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">URL foto:</span>
+                <input type="text" [(ngModel)]="data_portfolio.url_foto" formControlName="url_foto" class="form-control" placeholder="Url de una foto tuya" aria-label="Foto" aria-describedby="addon-wrapping">
+               </div>
+               <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">URL banner:</span>
+                <input type="text" [(ngModel)]="data_portfolio.url_banner" formControlName="url_banner" class="form-control" placeholder="Url de un banner" aria-label="Banner" aria-describedby="addon-wrapping">
+               </div>
+
+            </form>
+        </div>
+        <br><br>
+
+
+
+
+        <br>
+        <p id="just-aboutMe">{{data_portfolio.sobre_mi}}</p>
+    </div>
+  </div>

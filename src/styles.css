@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+#roundborder {
+    border: 2px solid #b6b6b6;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+.logo-item {
+    max-width: 90px;
+    max-height: 90px;
+    translate: -20% 50%;
+}
+.position-info {
+    margin-left: 100px;
+    margin-top: -75px;
+}
+
+#educ-logo {
+    max-width: 125px;
+    max-height: 125px;
+
+}
+
+#just-aboutMe{
+    text-align: justify;
+}
+
+#skills-text-center{
+    text-align: center;
+}
+
+#right_button {
+    align-self: flex-end;
+}
+

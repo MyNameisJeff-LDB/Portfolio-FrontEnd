@@ -1,0 +1,13 @@
+#img-banner {
+max-height: 400px;
+}
+#img-profile {
+position: absolute;
+width: 160px;
+height: 160px;
+top: 280px;
+margin-left:25px;
+translate: 40% 0%;
+
+
+}

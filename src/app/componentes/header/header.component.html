@@ -1,0 +1,10 @@
+    <div class="card mb-3">
+        <img [src]= "data_portfolio.url_banner" class="card-img-top" alt="..." id="img-banner">
+        <img [src]="data_portfolio.url_foto" class="rounded-circle" alt="profile" id="img-profile">
+        <div class="card-body">
+          <br>
+          <h2 class="card-title">{{data_portfolio.nombre_y_apellido}}</h2>
+          <p class="card-text">{{data_portfolio.currentJob}}</p>
+          <p class="card-text"><small class="text-muted">{{data_portfolio.currentLocation}} - Información de Contacto: {{data_portfolio.correo}}</small></p>
+        </div>
+      </div>
