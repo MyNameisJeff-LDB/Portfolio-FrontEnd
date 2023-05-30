@@ -8,7 +8,7 @@ import {FormGroup} from '@angular/forms';
 })
 export class PortfolioService {
 
-  private apiUrl = 'http://localhost:8080'; // URL de tu API de Spring Boot
+  private apiUrl = 'https://api-portoflio-argentinaprograma.onrender.com'; // URL de tu API de Spring Boot
 
   constructor(private http:HttpClient) { }
 
